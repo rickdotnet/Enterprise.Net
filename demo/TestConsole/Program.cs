@@ -12,7 +12,7 @@ builder.Services.AddEnterprise(enterprise =>
         {
             // managers can add workers during registration
             system.AddManager<TestManager>(cfg => cfg with { CommunityManager = true })
-                  .WithWorker<TestWorker>(cfg => cfg with { CommunityWorker = true });
+                  .WithWorker<TestWorker>();
             
             // system-wide workers can be added and used by all managers
             system.AddWorker<TestWorker>(cfg => cfg with { WorkerId = "test-worker" });

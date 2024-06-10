@@ -13,4 +13,6 @@ public enum StatusCode
 {
     Unknown = 0,
     Available,
+    Completed,
+    Failed
 }
