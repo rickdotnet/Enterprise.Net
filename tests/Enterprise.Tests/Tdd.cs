@@ -1,4 +1,4 @@
-﻿namespace Enterprise;
+﻿namespace Enterprise.Tests;
 
 public class Tdd
 {
