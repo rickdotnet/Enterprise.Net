@@ -1,15 +1,17 @@
 using Enterprise;
 using Enterprise.Managers;
+using Enterprise.Workers;
 
 namespace TestConsole;
 
 public record TestMessage(string Message) : IMessage;
-public class TestManager : ManagerBase
+public class TestManager(ManagerConfig config): ManagerBase(config)
 {
     public async Task Test()
     {
-        await System.SendAsync(new TestMessage("Hello"));
-        
+        var message = new TestMessage("Hello");
+        await this.AssignWorkAsync(message);
+
     }
 }
 

@@ -5,8 +5,12 @@ namespace TestConsole;
 
 public sealed class TestWorker : WorkerBase
 {
-    public override Task DoWorkAsync(IMessage message)
-    {
-        throw new NotImplementedException();
-    }
+    public Task HandleAsync(SomeMessage message) 
+        => Task.CompletedTask;
+
+    public Task HandleAsync(SomeOtherMessage message) 
+        => Task.CompletedTask;
 }
+
+public record SomeMessage : IMessage { }
+public record SomeOtherMessage : IMessage { }
